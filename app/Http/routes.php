@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/lorem', function () {
+    return view('lorem.genlorem');
+});
+
+Route::post('/lorem', function () {
+    return view('lorem.genlorem');
+});
+
+Route::get('/randomuser', function () {
+    return view('randomuser.genrandomuser');
+    echo App::environment();
+});
+
+Route::post('/randomuser', function () {
+  return view('randomuser.genrandomuser');
+    echo App::environment();
+});
