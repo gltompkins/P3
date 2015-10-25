@@ -14,17 +14,17 @@ such as a page specific styesheets.
 --}}
 
 @section('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+      <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
 
-    <img src='images/Fotolia_87889978_XS.jpg'
-		style='width:300px'
-    	alt='generate lorem ipsum text image'>
+      <img src='images/Fotolia_87889978_XS.jpg'
+        style='width:250px'
+        alt='generate lorem ipsum text image'>
 @stop
 
 
 
 @section('content')
-    <h1>Generate Lorem Ipsum Text</h1>
+      <h1>Generate Lorem Ipsum Text</h1>
 
 
 @stop
@@ -48,18 +48,37 @@ such as a page specific JavaScript files.
 
     <form method="post" action="/lorem" id="loremform">
     	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
-    	How many paragraphs of text would you like?
-  		<input type='number' name='paraNumber' min="1" max="10" step="1" value=3 autofocus >
-		(max 10)
+    	How many paragraphs?  <input type="number"
+    	id="idNumTest"
+        name="paraNumber" min="1" max="10" step="1"
+        autofocus required > (max 10)
 
 		<br />
-		<input type="submit" name="formSubmit" value='Submit'>
+		<input type="submit" name="formSubmitLorem" class="btn btn-primary"
+               value='Submit'>
 		<br /> <br />
     </form>
 
-	<?php
-		print_r($_POST);
-		echo "Gregg test";
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (empty($_POST["paraNumber"])){
+    	       $paraNumError = "Number of paragraphs is required";
+        } else {
+    	    $numParagraphs = test_input($_POST["paraNumber"]);
+        }
+
+        $generator = new Badcow\LoremIpsum\Generator();
+        $paragraphs = $generator->getParagraphs($numParagraphs);
+        echo implode('<p>', $paragraphs);
+    }
+
+	// this function copied from w3schools.com
+	function test_input($data) {
+	    $data = trim($data);
+		$data = stripslashes($data);
+	    $data = htmlspecialchars($data);
+		return $data;
+	}
 	?>
 
 @stop

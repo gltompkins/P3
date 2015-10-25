@@ -1,0 +1,15 @@
+h1 {
+    text-align: left;
+}
+body{
+    padding:20px;
+    /* using hsla colors.  equates to rgba, but is easier to fine tune colors
+       if you think in terms of rotating around the color wheel clockwise,
+       which adjusts the hue, the "h" in hsla.
+       See http://www.workwithcolor.com/hsl-color-picker-01.htm for a good visual
+       representation.
+       see http://www.w3schools.com/cssref/css_colors_legal.asp for a comparison
+       to rgb and others.
+       */
+    background: linear-gradient( hsla(170,100%,45%,.25), hsla(0,100%,100%,1));
+}
