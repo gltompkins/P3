@@ -14,11 +14,13 @@ such as a page specific styesheets.
 --}}
 
 @section('head')
-      <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+      <link href="/p3/p3.css" type='text/css' rel='stylesheet'>
 
+      {{-- image file purchased from Fotolia --}}
       <img src='images/Fotolia_87889978_XS.jpg'
         style='width:250px'
         alt='generate lorem ipsum text image'>
+
 @stop
 
 
@@ -38,17 +40,15 @@ such as a page specific JavaScript files.
 @section('body')
     <script src="/js/books/show.js"></script>
 
-    <p>(from <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">en.wikipedia.org/wiki/Lorem_ipsum</a>)
-    <br>
-    In publishing and graphic design, lorem ipsum (derived from Latin dolorem ipsum,
+    <h6>(from <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">en.wikipedia.org/wiki/Lorem_ipsum</a>)</h6>
+    <h4>In publishing and graphic design, lorem ipsum (derived from Latin dolorem ipsum,
     translated as "pain itself") is a filler text commonly used to demonstrate the
-    graphic elements of a document or visual presentation...
-    </p>
+    graphic elements of a document or visual presentation...</h4>
 
 
     <form method="post" action="/lorem" id="loremform">
     	<input type='hidden' name='_token' value='{{ csrf_token() }}'>
-    	How many paragraphs?  <input type="number"
+    	Generate how many paragraphs? <input type="number"
     	id="idNumTest"
         name="paraNumber" min="1" max="10" step="1"
         autofocus required > (max 10)

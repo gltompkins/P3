@@ -15,6 +15,7 @@ such as a page specific styesheets.
 
 @section('head')
     <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+    {{-- image file purchased from Fotolia --}}
     <img src='images/Fotolia_67429894_XS.jpg'
 		style='width:250px'
     	alt='generate random user image'>
@@ -38,11 +39,11 @@ such as a page specific JavaScript files.
 @section('body')
     <script src="/js/books/show.js"></script>
 
-    <p>
-    You can generate random users for developing applications with test users.
-    Are you tired of using "Mickey Mouse, Minnie Mouse, Donald Duck" as your test users?
-    Generate test users with realistic names, addresses, email, and more!
-    </p>
+    <h4>Are you tired of using "Mickey Mouse, Minnie Mouse, Donald Duck" as your
+        test users? You can generate random users for developing applications
+        with test users. Generate test users with realistic names, addresses,
+        email, and more!
+    </h4>
 
     <form
         <div class="form-group"
@@ -53,7 +54,7 @@ such as a page specific JavaScript files.
          autofocus required >
 		(max 20)
 
-		<br />
+		<br>
 		<input type="submit" name="formSubmit" class="btn btn-primary" value='Submit'>
 		<br>
         </div>
