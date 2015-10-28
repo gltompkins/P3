@@ -6,7 +6,6 @@ This project has 2 components, a Lorem Ipsum text generator and a Random Test Us
 I added a logo for my websites on the home page.
 
 
-
 Credits: w3schools.com for references
 
 code from bootstrap.org in .css
@@ -15,7 +14,7 @@ code from bootstrap.org in .css
 since they are purchased.
 
 Here's the link to the github repository
-[git@github.com:gltompkins/P3.git](git@github.com:gltompkins/P3.git)
+[https://github.com/gltompkins/P3](https://github.com/gltompkins/P3)
 
 and the project webpage  
 [http://p3.greggtompkins.com](http://p3.greggtompkins.com)
